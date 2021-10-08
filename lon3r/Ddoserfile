@@ -1,0 +1,12 @@
+FROM golang:1-alpine
+LABEL maintainer="Alex Lon3r.Mods <Lon3rmods@gmail.com>"
+
+RUN apk add --no-cache git \
+  && go get -d -v github.com/Lon3rmods/ddoser-Lon3r \
+  && go install github.com/Lon3rmods/ddoser-Lon3r@latest \
+  && rm -rf ~/go/src/github.com/Lon3rmods/ddoser-Lon3r\
+  && apk del git
+
+ENTRYPOINT ["Lon3r Fucker"]
+
+CMD ["--help"]
